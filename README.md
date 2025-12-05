@@ -39,6 +39,10 @@ uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
 | POST | `/api/v1/data-miner/execute-etl` | Ejecutar pipeline ETL |
 | POST | `/api/v1/data-miner/execute-etl-async` | ETL en background |
 | GET | `/api/v1/data-miner/feature-vector/count` | Conteo de registros |
+| POST | `/api/v1/clustering/execute` | Ejecutar Clustering |
+| GET | `/api/v1/clustering/visualize/dashboard` | **Dashboard de Visualización** |
+| GET | `/api/v1/clustering/visualize/scatter` | Scatter Plot PCA |
+| GET | `/api/v1/clustering/visualize/radar` | Radar Chart de Clusters |
 
 ## 📊 KPIs Calculados
 

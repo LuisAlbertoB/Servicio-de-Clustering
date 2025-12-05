@@ -1,7 +1,7 @@
 # app/api/clustering_routes.py
 """Endpoints para clustering y visualización."""
 
-from fastapi import APIRouter, HTTPException, status, Query, Response
+from fastapi import APIRouter, HTTPException, status, Query, Response, Path
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from typing import Dict, List, Optional
@@ -131,7 +131,7 @@ def get_clustering_results():
 
 @router.get("/users/{risk_level}", response_model=List[UserRiskResponse])
 def get_users_by_risk(
-    risk_level: str = Query(..., description="Nivel de riesgo: ALTO_RIESGO, RIESGO_MODERADO, BAJO_RIESGO")
+    risk_level: str = Path(..., description="Nivel de riesgo: ALTO_RIESGO, RIESGO_MODERADO, BAJO_RIESGO")
 ):
     """Obtiene la lista de usuarios para un nivel de riesgo específico."""
     ensemble = _clustering_state.get("ensemble")
